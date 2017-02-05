@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Web Font 1</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Oregano" rel="stylesheet">
+
+<style>
+	body {
+		font-family: 'Oregano', cursive;
+	}
+
+	.app {
+		width: 18cm;
+	}
+
+	.grid {
+		width: 4.4cm;
+		height: 6.6cm;
+		border: 1px solid black;
+		margin-left: -1px;
+		margin-top: -1px;
+		text-align: center;
+		line-height: 6cm;
+		display: inline-block;
+		font-size: 3cm;
+	}
+</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+</head>
+<body>
+
+
+<div class="app" ng-app="add" ng-controller="addCtrl">
+
+	<div ng-repeat="(key, value) in nums" class="grid">
+		{{value}}
+	</div>
+
+</div>
+
+
+<script>
+
+var app = angular.module('add', []);
+
+app.controller('addCtrl', function($scope) {
+	$scope.nums = [];
+	for (var i = 1; i <= 30; i++) {
+		$scope.nums.push(i);
+	}
+});
+
+</script>
+
+</body>
+
+</html>
